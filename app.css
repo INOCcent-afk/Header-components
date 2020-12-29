@@ -125,15 +125,17 @@ p {
   width: 100%;
   height: 100vh;
   max-height: 500px;
-  background-image: url("./images/homepage-hero.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding: 0 10px;
+}
+.header img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
 }
 .header-content {
   display: flex;
@@ -143,6 +145,7 @@ p {
   width: 90%;
   gap: 25px;
   text-align: center;
+  z-index: 25;
 }
 .header h2 {
   font-family: "aktiv-grotesk-extended", sans-serif;
@@ -161,6 +164,13 @@ p {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 25;
+  width: 60px;
+  height: 60px;
+}
+.header-anchor img {
+  width: 60px;
+  height: 60px;
 }
 @media (min-width: 576px) {
   .header-content h2,
@@ -223,16 +233,22 @@ p {
 /* CSS FOR HEADER INTERNAL */
 .header-internal {
   height: 400px;
-  background-image: url("./images/health-page-hero.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 10px solid #00cfb4;
+  position: relative;
 }
-.header-internal h1 {
+.header-internal img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+.header-internal-content {
+  z-index: 25;
+}
+.header-internal-content h1 {
   font-family: "aktiv-grotesk-extended", sans-serif;
   font-weight: 700;
   color: #fff;
@@ -242,14 +258,16 @@ p {
   line-height: 38px;
 }
 @media (min-width: 576px) {
-  .header-internal h1 {
-    font-size: 36px;
+  .header-internal-content {
     max-width: 422px;
+  }
+  .header-internal-content h1 {
+    font-size: 36px;
     line-height: 44px;
   }
 }
 @media (min-width: 768px) {
-  .header-internal h1 {
+  .header-internal-content {
     max-width: 60%;
   }
 }
@@ -264,9 +282,14 @@ p {
   }
 }
 @media (min-width: 1200px) {
-  .header-internal h1 {
+  .header-internal-content h1 {
+    line-height: 58px;
     font-size: 48px;
     max-width: 754px;
-    line-height: 58px;
+  }
+}
+@media (min-width: 1300px) {
+  .header-internal {
+    height: 735px;
   }
 }
